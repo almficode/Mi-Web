@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+/* ============================================
+   Almficode design tokens
+   Paleta calcada de la referencia (makorastudio.com):
+   blanco/gris + acento azul eléctrico + coral puntual.
+   ============================================ */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f2f3f4;
+  --color-surface-2: #e9ebed;
+  --color-border: #dedfe0;
+  --color-border-strong: #c7c7c8;
+
+  --color-text: #393939;
+  --color-text-strong: #212121;
+  --color-text-muted: #808081;
+  --color-text-faint: #afb0b0;
+
+  --color-accent: #ff4925;
+  --color-accent-strong: #d93a1a;
+  --color-accent-soft: #ffe9e2;
+  --color-accent-2: #0099ff;
+  --color-accent-2-soft: #e6f4ff;
+  --color-salmon: #ff8b75;
+
+  --color-dark: #171717;
+  --color-dark-surface: #212121;
+  --color-dark-border: #393939;
+  --color-dark-text: #f2f3f4;
+  --color-dark-text-muted: #afb0b0;
+
+  --radius-sm: 12px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --radius-pill: 999px;
+
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --shadow-soft:
+    0px 2px 4px rgba(0, 0, 0, 0.02), 0px 8px 16px rgba(0, 0, 0, 0.04),
+    0px 24px 48px rgba(0, 0, 0, 0.06);
+  --shadow-soft-lg:
+    0px 4px 8px rgba(0, 0, 0, 0.02), 0px 16px 32px rgba(0, 0, 0, 0.05),
+    0px 40px 80px rgba(0, 0, 0, 0.08);
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+
+  --color-text: var(--color-text);
+  --color-text-strong: var(--color-text-strong);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-faint: var(--color-text-faint);
+
+  --color-accent: var(--color-accent);
+  --color-accent-strong: var(--color-accent-strong);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-2: var(--color-accent-2);
+  --color-accent-2-soft: var(--color-accent-2-soft);
+
+  --color-dark: var(--color-dark);
+  --color-dark-surface: var(--color-dark-surface);
+  --color-dark-border: var(--color-dark-border);
+  --color-dark-text: var(--color-dark-text);
+  --color-dark-text-muted: var(--color-dark-text-muted);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-boldonse);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.font-display {
+  font-family: var(--font-boldonse), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+/* RevealText (SplitType + GSAP) line/word masking.
+   Extra padding gives descenders/accents room so overflow:hidden
+   doesn't clip letters like g, y, q or accented capitals. */
+.reveal-line {
+  overflow: hidden;
+  display: block;
+  padding-top: 0.12em;
+  margin-top: -0.12em;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+.reveal-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* Marquee ticker */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
+}
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(6%, 8%) scale(1.1);
+  }
+  66% {
+    transform: translate(-4%, -6%) scale(0.95);
+  }
+}
+
+/* Custom cursor: only enabled by JS on fine-pointer devices (see CustomCursor.tsx) */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Lenis smooth scroll helpers */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

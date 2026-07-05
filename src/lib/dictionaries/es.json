@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "title": "Almficode — Desarrollo web con Inteligencia Artificial",
+    "description": "Almficode es una agencia de desarrollo web moderno con IA integrada: diseño premium, chatbots inteligentes, automatización y mantenimiento para negocios que quieren destacar.",
+    "ogImageAlt": "Almficode — Agencia de desarrollo web e IA"
+  },
+  "loader": {
+    "tagline": "Lo bueno lleva su tiempo."
+  },
+  "nav": {
+    "about": "Nosotros",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "process": "Proceso",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "cta": "Hablemos",
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "floatingBar": {
+    "pricing": "Precios",
+    "bookCall": "Reservar llamada"
+  },
+  "hero": {
+    "badge": "Disponibles para nuevos proyectos",
+    "titleStart": "Desarrollamos webs inteligentes para",
+    "titleAccent": "empresas que quieren destacar.",
+    "subtitle": "Diseño web moderno, automatización e Inteligencia Artificial para hacer crecer tu negocio.",
+    "cta": "Ver proyectos",
+    "scrollHint": "Desliza para descubrir"
+  },
+  "about": {
+    "eyebrow": "Sobre nosotros",
+    "title": "Somos Almficode.",
+    "description": "Una agencia especializada en desarrollo web moderno con Inteligencia Artificial integrada. Trabajamos codo a codo con cada cliente para convertir procesos lentos y webs anticuadas en experiencias rápidas, automatizadas e inteligentes.",
+    "points": [
+      {
+        "title": "Desarrollo web",
+        "description": "Sitios rápidos, escalables y a medida."
+      },
+      {
+        "title": "Automatización",
+        "description": "Conectamos herramientas para ahorrarte horas de trabajo."
+      },
+      {
+        "title": "Inteligencia Artificial",
+        "description": "Chatbots y asistentes que atienden y convierten."
+      },
+      {
+        "title": "Optimización",
+        "description": "Procesos y rendimiento pulidos al detalle."
+      }
+    ]
+  },
+  "metrics": {
+    "eyebrow": "Métricas",
+    "titleStart": "Números que hablan",
+    "titleAccent": "por sí solos",
+    "items": [
+      {
+        "label": "Proyectos entregados",
+        "description": "En sectores, plataformas y tamaños de negocio distintos",
+        "value": "15+"
+      },
+      {
+        "label": "Años de experiencia",
+        "description": "Perfeccionando el oficio en cada proyecto que lanzamos",
+        "value": "1"
+      },
+      {
+        "label": "Satisfacción de clientes",
+        "description": "Clientes que repiten y nos recomiendan a otros",
+        "value": "100%"
+      },
+      {
+        "label": "Entrega media",
+        "description": "Desde el kickoff hasta la web ya en producción",
+        "value": "5 días"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Qué hacemos",
+    "titleStart": "Todo lo que tu web",
+    "titleAccent": "necesita",
+    "subtitle": "Cubrimos todo el proceso, del diseño pixel-perfect al código de producción, para que no tengas que juntar varios proveedores.",
+    "items": [
+      {
+        "id": "desarrollo-web",
+        "title": "Desarrollo web",
+        "description": "Webs modernas, responsive y rápidas, pensadas para convertir.",
+        "tags": [
+          "Responsive",
+          "SEO",
+          "Rápidas",
+          "Escalables"
+        ]
+      },
+      {
+        "id": "chatbots-ia",
+        "title": "Chatbots con IA",
+        "description": "Integración de Inteligencia Artificial personalizada para tu negocio.",
+        "tags": [
+          "Atención automática",
+          "Captación",
+          "Asistentes",
+          "Automatización"
+        ]
+      },
+      {
+        "id": "mantenimiento",
+        "title": "Mantenimiento web",
+        "description": "Tu web siempre actualizada, segura y monitorizada.",
+        "tags": [
+          "Actualizaciones",
+          "Seguridad",
+          "Backups",
+          "Soporte"
+        ]
+      },
+      {
+        "id": "mejoras",
+        "title": "Modificaciones y mejoras",
+        "description": "Tu web evoluciona contigo: nuevas funciones cuando las necesites.",
+        "tags": [
+          "Contenido",
+          "Funcionalidades",
+          "Optimización",
+          "Escalabilidad"
+        ]
+      },
+      {
+        "id": "automatizacion",
+        "title": "Automatización",
+        "description": "Conectamos tus herramientas para que trabajen solas.",
+        "tags": [
+          "Integraciones",
+          "Procesos",
+          "Ahorro de tiempo",
+          "Conexiones"
+        ]
+      }
+    ],
+    "scrollHint": "Sigue bajando para ver más"
+  },
+  "projects": {
+    "eyebrow": "Proyectos",
+    "title": "Webs reales que hemos construido.",
+    "subtitle": "Negocios que ya confiaron en nosotros para llevar su presencia online al siguiente nivel.",
+    "viewProject": "Ver proyecto",
+    "marquee": [
+      "PROYECTOS",
+      "TRABAJOS DESTACADOS"
+    ]
+  },
+  "process": {
+    "eyebrow": "Proceso",
+    "title": "Así trabajamos, paso a paso.",
+    "subtitle": "Un proceso claro, sin sorpresas, de la idea al lanzamiento.",
+    "steps": [
+      {
+        "title": "Reunión",
+        "description": "Escuchamos tu negocio, tus objetivos y qué necesitas conseguir."
+      },
+      {
+        "title": "Diseño",
+        "description": "Creamos la identidad visual y la experiencia de usuario a medida."
+      },
+      {
+        "title": "Desarrollo",
+        "description": "Construimos la web con código limpio, rápido y escalable."
+      },
+      {
+        "title": "Integración de IA",
+        "description": "Añadimos automatización y asistentes inteligentes donde aporten valor."
+      },
+      {
+        "title": "Lanzamiento",
+        "description": "Publicamos tu web optimizada y lista para recibir visitas."
+      },
+      {
+        "title": "Mantenimiento",
+        "description": "Seguimos a tu lado con soporte, mejoras y monitorización continua."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "titleStart": "Inversión clara,",
+    "titleAccent": "sin sorpresas",
+    "subtitle": "Precios orientativos de partida. Cada proyecto se presupuesta a medida tras la primera reunión.",
+    "mostPopular": "Más elegido",
+    "cta": "Empezar proyecto",
+    "plans": [
+      {
+        "name": "Web + Automatización",
+        "price": "Consultar con nosotros",
+        "description": "Para negocios que quieren automatizar procesos además de tener una web premium.",
+        "features": [
+          "Diseño a medida",
+          "Chatbot con IA integrado",
+          "Automatizaciones a medida",
+          "Panel de contenidos",
+          "Soporte 30 días incluido"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "Mantenimiento",
+        "price": "Consultar con nosotros",
+        "description": "Actualizaciones, seguridad y mejoras continuas para tu web ya existente.",
+        "features": [
+          "Actualizaciones y backups",
+          "Monitorización 24/7",
+          "Cambios de contenido",
+          "Soporte prioritario"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "¿Tienes dudas?",
+    "titleStart": "Preguntas",
+    "titleAccent": "frecuentes",
+    "items": [
+      {
+        "question": "¿Cuánto tarda en estar lista mi web?",
+        "answer": "Depende del alcance, pero la mayoría de proyectos están listos entre 2 y 4 semanas desde la reunión inicial."
+      },
+      {
+        "question": "¿Puedo pedir cambios después del lanzamiento?",
+        "answer": "Sí. Ofrecemos planes de mantenimiento y mejoras continuas para que tu web evolucione con tu negocio."
+      },
+      {
+        "question": "¿Qué es exactamente un chatbot con IA?",
+        "answer": "Un asistente virtual entrenado con la información de tu negocio que atiende, resuelve dudas y capta clientes de forma automática, 24/7."
+      },
+      {
+        "question": "¿Trabajáis con negocios de cualquier sector?",
+        "answer": "Sí, adaptamos cada proyecto al sector y necesidades específicas de cada cliente."
+      },
+      {
+        "question": "¿Incluye la web hosting y dominio?",
+        "answer": "Te asesoramos y gestionamos el hosting y dominio si lo necesitas, o trabajamos sobre los que ya tengas."
+      },
+      {
+        "question": "¿Cómo empezamos a trabajar juntos?",
+        "answer": "Con una primera reunión sin compromiso para entender tu proyecto y proponerte la mejor solución."
+      },
+      {
+        "question": "¿Ofrecéis automatización sin desarrollo web completo?",
+        "answer": "Sí, la automatización y los chatbots se pueden contratar de forma independiente."
+      },
+      {
+        "question": "¿Qué tecnologías utilizáis?",
+        "answer": "Trabajamos con tecnologías modernas como Next.js, React e integraciones de IA de última generación."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para llevar tu negocio al siguiente nivel?",
+    "subtitle": "Cuéntanos tu proyecto y te respondemos en menos de 24 horas.",
+    "button": "Hablemos",
+    "whatsappMessage": "Hola Almficode, quiero información sobre vuestros servicios de desarrollo web e IA."
+  },
+  "footer": {
+    "statement": "Almficode es un estudio de desarrollo web e IA que construye webs rápidas y bonitas para negocios que no se conforman con la media.",
+    "linksTitle": "Navegación",
+    "contactTitle": "Contacto",
+    "socialTitle": "Redes sociales",
+    "rights": "Todos los derechos reservados."
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Ideas sobre desarrollo web, IA y automatización.",
+    "subtitle": "Recursos y reflexiones para negocios que quieren crecer online.",
+    "readMore": "Leer artículo",
+    "backToBlog": "Volver al blog",
+    "minutesRead": "min de lectura"
+  },
+  "whatsappFloat": {
+    "label": "Escríbenos por WhatsApp",
+    "message": "Hola Almficode, tengo una consulta."
+  },
+  "languageSwitcher": {
+    "label": "Idioma"
+  },
+  "legal": {
+    "title": "Legal",
+    "backHome": "Volver al inicio",
+    "lastUpdated": "Última actualización: julio de 2026",
+    "links": {
+      "aviso-legal": "Aviso legal",
+      "privacidad": "Política de privacidad",
+      "cookies": "Política de cookies"
+    }
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "title": "Almficode — Web Development with Artificial Intelligence",
+    "description": "Almficode is a modern web development agency with integrated AI: premium design, smart chatbots, automation and maintenance for businesses that want to stand out.",
+    "ogImageAlt": "Almficode — Web development and AI agency"
+  },
+  "loader": {
+    "tagline": "Good things take a second."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "process": "Process",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "cta": "Let's talk",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "floatingBar": {
+    "pricing": "Pricing",
+    "bookCall": "Book a call"
+  },
+  "hero": {
+    "badge": "Open for new projects",
+    "titleStart": "We build intelligent websites for",
+    "titleAccent": "businesses that want to stand out.",
+    "subtitle": "Modern web design, automation and Artificial Intelligence to grow your business.",
+    "cta": "View projects",
+    "scrollHint": "Scroll to discover"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "We are Almficode.",
+    "description": "An agency specialized in modern web development with integrated Artificial Intelligence. We work side by side with every client to turn slow processes and outdated websites into fast, automated, intelligent experiences.",
+    "points": [
+      {
+        "title": "Web development",
+        "description": "Fast, scalable, tailor-made websites."
+      },
+      {
+        "title": "Automation",
+        "description": "We connect your tools to save you hours of work."
+      },
+      {
+        "title": "Artificial Intelligence",
+        "description": "Chatbots and assistants that engage and convert."
+      },
+      {
+        "title": "Optimization",
+        "description": "Processes and performance polished to the detail."
+      }
+    ]
+  },
+  "metrics": {
+    "eyebrow": "Metrics",
+    "titleStart": "Numbers that speak",
+    "titleAccent": "for themselves",
+    "items": [
+      {
+        "label": "Projects delivered",
+        "description": "Across industries, platforms and business sizes",
+        "value": "15+"
+      },
+      {
+        "label": "Years building",
+        "description": "Refining our craft with every project we ship",
+        "value": "1"
+      },
+      {
+        "label": "Client satisfaction",
+        "description": "Clients who come back and bring others with them",
+        "value": "100%"
+      },
+      {
+        "label": "Average turnaround",
+        "description": "From kickoff to a live, performant site",
+        "value": "5 Days"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "titleStart": "Everything your website",
+    "titleAccent": "needs",
+    "subtitle": "We cover the full stack of web, from pixel-perfect design to performant code, so you never have to stitch together multiple vendors.",
+    "items": [
+      {
+        "id": "desarrollo-web",
+        "title": "Web development",
+        "description": "Modern, responsive, fast websites designed to convert.",
+        "tags": [
+          "Responsive",
+          "SEO",
+          "Fast",
+          "Scalable"
+        ]
+      },
+      {
+        "id": "chatbots-ia",
+        "title": "AI Chatbots",
+        "description": "Custom Artificial Intelligence integration for your business.",
+        "tags": [
+          "Automated support",
+          "Lead capture",
+          "Assistants",
+          "Automation"
+        ]
+      },
+      {
+        "id": "mantenimiento",
+        "title": "Website maintenance",
+        "description": "Your website always updated, secure and monitored.",
+        "tags": [
+          "Updates",
+          "Security",
+          "Backups",
+          "Support"
+        ]
+      },
+      {
+        "id": "mejoras",
+        "title": "Changes & improvements",
+        "description": "Your website evolves with you: new features whenever you need them.",
+        "tags": [
+          "Content",
+          "Features",
+          "Optimization",
+          "Scalability"
+        ]
+      },
+      {
+        "id": "automatizacion",
+        "title": "Automation",
+        "description": "We connect your tools so they work on their own.",
+        "tags": [
+          "Integrations",
+          "Processes",
+          "Time saving",
+          "Connections"
+        ]
+      }
+    ],
+    "scrollHint": "Keep scrolling to see more"
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Real websites we've built.",
+    "subtitle": "Businesses that already trusted us to take their online presence to the next level.",
+    "viewProject": "View project",
+    "marquee": [
+      "PROJECTS",
+      "FEATURED WORK"
+    ]
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "How we work, step by step.",
+    "subtitle": "A clear process, no surprises, from idea to launch.",
+    "steps": [
+      {
+        "title": "Meeting",
+        "description": "We listen to your business, your goals and what you need to achieve."
+      },
+      {
+        "title": "Design",
+        "description": "We craft the visual identity and the user experience, tailor-made."
+      },
+      {
+        "title": "Development",
+        "description": "We build the website with clean, fast, scalable code."
+      },
+      {
+        "title": "AI Integration",
+        "description": "We add automation and intelligent assistants wherever they add value."
+      },
+      {
+        "title": "Launch",
+        "description": "We publish your optimized website, ready to receive visitors."
+      },
+      {
+        "title": "Maintenance",
+        "description": "We stay by your side with support, improvements and continuous monitoring."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "titleStart": "Clear investment,",
+    "titleAccent": "no surprises",
+    "subtitle": "Starting prices as a reference. Every project gets a tailored quote after the first meeting.",
+    "mostPopular": "Most popular",
+    "cta": "Start a project",
+    "plans": [
+      {
+        "name": "Website + Automation",
+        "price": "Contact us",
+        "description": "For businesses that want automated processes on top of a premium website.",
+        "features": [
+          "Custom design",
+          "Integrated AI chatbot",
+          "Custom automations",
+          "Content dashboard",
+          "30-day support included"
+        ],
+        "highlighted": true
+      },
+      {
+        "name": "Maintenance",
+        "price": "Contact us",
+        "description": "Updates, security and continuous improvements for your existing website.",
+        "features": [
+          "Updates & backups",
+          "24/7 monitoring",
+          "Content changes",
+          "Priority support"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Got questions?",
+    "titleStart": "Frequently asked",
+    "titleAccent": "questions",
+    "items": [
+      {
+        "question": "How long does it take to have my website ready?",
+        "answer": "It depends on the scope, but most projects are ready within 2 to 4 weeks from the initial meeting."
+      },
+      {
+        "question": "Can I request changes after launch?",
+        "answer": "Yes. We offer maintenance and continuous improvement plans so your website evolves with your business."
+      },
+      {
+        "question": "What exactly is an AI chatbot?",
+        "answer": "A virtual assistant trained with your business information that answers questions and captures leads automatically, 24/7."
+      },
+      {
+        "question": "Do you work with businesses in any industry?",
+        "answer": "Yes, we adapt every project to the specific industry and needs of each client."
+      },
+      {
+        "question": "Does the website include hosting and domain?",
+        "answer": "We can advise and manage hosting and domain if you need it, or work with the ones you already have."
+      },
+      {
+        "question": "How do we start working together?",
+        "answer": "With a first no-commitment meeting to understand your project and propose the best solution."
+      },
+      {
+        "question": "Do you offer automation without a full website build?",
+        "answer": "Yes, automation and chatbots can be hired independently."
+      },
+      {
+        "question": "What technologies do you use?",
+        "answer": "We work with modern technologies like Next.js, React and state-of-the-art AI integrations."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to take your business to the next level?",
+    "subtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+    "button": "Let's talk",
+    "whatsappMessage": "Hi Almficode, I'd like information about your web development and AI services."
+  },
+  "footer": {
+    "statement": "Almficode is a web development and AI studio building fast, beautiful websites for businesses that refuse to settle for average.",
+    "linksTitle": "Navigation",
+    "contactTitle": "Contact",
+    "socialTitle": "Social media",
+    "rights": "All rights reserved."
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Ideas on web development, AI and automation.",
+    "subtitle": "Resources and insights for businesses that want to grow online.",
+    "readMore": "Read article",
+    "backToBlog": "Back to blog",
+    "minutesRead": "min read"
+  },
+  "whatsappFloat": {
+    "label": "Message us on WhatsApp",
+    "message": "Hi Almficode, I have a question."
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  },
+  "legal": {
+    "title": "Legal",
+    "backHome": "Back to home",
+    "lastUpdated": "Last updated: July 2026",
+    "links": {
+      "aviso-legal": "Legal notice",
+      "privacidad": "Privacy policy",
+      "cookies": "Cookie policy"
+    }
+  }
+}
