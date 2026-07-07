@@ -149,6 +149,15 @@ body {
   }
 }
 
+@keyframes wave-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes drift {
   0%,
   100% {

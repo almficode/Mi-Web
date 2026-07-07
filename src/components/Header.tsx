@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -18,6 +19,11 @@ export default function Header({
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  // The home hero is a dark full-screen video, so the header needs its
+  // light variant there until the user scrolls (or the menu overlay opens).
+  const isHome = pathname === `/${locale}`;
+  const onDark = (isHome && !scrolled) || menuOpen;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -61,7 +67,9 @@ export default function Header({
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-          <Logo locale={locale} />
+          <div className="relative z-[60]">
+            <Logo locale={locale} variant={onDark ? "light" : "dark"} />
+          </div>
 
           <button
             onClick={() => setMenuOpen((v) => !v)}

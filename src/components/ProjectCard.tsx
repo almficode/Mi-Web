@@ -29,7 +29,7 @@ export default function ProjectCard({
     target: cardRef,
     offset: ["start end", "end start"],
   });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
 
   return (
     <motion.a
@@ -41,11 +41,20 @@ export default function ProjectCard({
       data-cursor-label={viewLabel}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{
+        opacity: 0,
+        y: 70,
+        clipPath: "inset(18% 10% 18% 10% round 40px)",
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        clipPath: "inset(0% 0% 0% 0% round 24px)",
+      }}
+      whileHover={{ y: -8 }}
       viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
-      transition={{ duration: 0.7, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
-      className="group block overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] bg-white"
+      transition={{ duration: 0.9, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      className="group block overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] bg-white shadow-[var(--shadow-soft)] transition-shadow duration-500 hover:shadow-[var(--shadow-soft-lg)]"
     >
       <div className="border-b border-[var(--color-border)] px-6 py-4">
         <h3 className="font-display text-lg uppercase text-[var(--color-text-strong)]">{name}</h3>
@@ -56,9 +65,9 @@ export default function ProjectCard({
 
       <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-surface)]">
         <motion.div
-          style={{ y: imageY, scale: hovered ? 1.06 : 1 }}
-          transition={{ scale: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }}
-          className="absolute inset-[-8%]"
+          style={{ y: imageY, scale: hovered ? 1.07 : 1 }}
+          transition={{ scale: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }}
+          className="absolute inset-[-12%]"
         >
           <Image
             src={project.image}

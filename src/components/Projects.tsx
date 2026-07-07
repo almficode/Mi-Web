@@ -30,17 +30,23 @@ export default function Projects({
           </p>
         </RevealOnScroll>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {projects.map((project, i) => (
-            <ProjectCard
+            <div
               key={project.id}
-              project={project}
-              name={project.name[locale]}
-              description={project.description[locale]}
-              category={project.category[locale]}
-              viewLabel={dict.projects.viewProject}
-              index={i}
-            />
+              className={
+                i % 3 === 1 ? "lg:mt-14" : i % 3 === 2 ? "lg:mt-7" : undefined
+              }
+            >
+              <ProjectCard
+                project={project}
+                name={project.name[locale]}
+                description={project.description[locale]}
+                category={project.category[locale]}
+                viewLabel={dict.projects.viewProject}
+                index={i}
+              />
+            </div>
           ))}
         </div>
       </div>

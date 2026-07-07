@@ -198,10 +198,15 @@
         "price": "Consultar con nosotros",
         "description": "Para negocios que quieren automatizar procesos además de tener una web premium.",
         "features": [
-          "Diseño a medida",
+          "Diseño a medida y exclusivo",
+          "Web rápida, escalable y responsive",
+          "SEO técnico y posicionamiento en Google",
+          "Optimización de velocidad de carga",
           "Chatbot con IA integrado",
           "Automatizaciones a medida",
-          "Panel de contenidos",
+          "Textos orientados a conversión",
+          "Hosting y dominio gestionados",
+          "Aviso legal, privacidad y cookies incluidos",
           "Soporte 30 días incluido"
         ],
         "highlighted": true
@@ -211,10 +216,14 @@
         "price": "Consultar con nosotros",
         "description": "Actualizaciones, seguridad y mejoras continuas para tu web ya existente.",
         "features": [
-          "Actualizaciones y backups",
+          "Actualizaciones y backups periódicos",
           "Monitorización 24/7",
-          "Cambios de contenido",
-          "Soporte prioritario"
+          "Seguridad y parches al día",
+          "Cambios de contenido cuando los necesites",
+          "Mejoras continuas de SEO",
+          "Informes de rendimiento",
+          "Pequeñas funcionalidades nuevas",
+          "Soporte prioritario por WhatsApp"
         ]
       }
     ]

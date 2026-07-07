@@ -14,12 +14,22 @@ gsap.registerPlugin(ScrollTrigger);
 const serviceImages: Record<string, string> = {
   "desarrollo-web": "/services/desarrollo-web.png",
   "chatbots-ia": "/services/chatbot-ia.png",
+  mantenimiento: "/services/mantenimiento.jpg",
+  mejoras: "/services/mejoras.jpg",
+  automatizacion: "/services/automatizacion.jpg",
 };
 
 export default function Services({ dict }: { dict: Dictionary }) {
   const [active, setActive] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
+  // Scroll direction of the last change (1 = forwards/down, -1 = backwards/up)
+  // so the cylinder roll and the letter cascade follow the direction of travel.
+  const lastActiveRef = useRef(0);
+  const direction = active >= lastActiveRef.current ? 1 : -1;
+  useEffect(() => {
+    lastActiveRef.current = active;
+  }, [active]);
   const items = dict.services.items;
   const activeService = items[active];
   const accent = active % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-2)";
@@ -91,21 +101,45 @@ export default function Services({ dict }: { dict: Dictionary }) {
                   <div
                     key={service.id}
                     className="border-b border-[var(--color-border)] py-4 first:border-t"
-                    style={{ perspective: 600 }}
+                    style={{ perspective: 700 }}
                   >
-                    <motion.span
+                    <span
                       className="font-display block text-4xl uppercase leading-none lg:text-[2.75rem]"
-                      initial={false}
-                      animate={{
-                        rotateX: active === i ? 0 : -35,
-                        color: active === i ? itemAccent : "var(--color-text-faint)",
-                        opacity: active === i ? 1 : 0.85,
-                      }}
-                      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                      style={{ transformOrigin: "50% 100%", display: "inline-block" }}
+                      aria-label={service.title}
                     >
-                      {service.title}
-                    </motion.span>
+                      {/* Cylinder roll that follows the scroll direction:
+                          going down, letters roll upwards into place; going up,
+                          they roll back downwards. The cascade also reverses. */}
+                      {service.title.split("").map((char, ci) => {
+                        const isActive = active === i;
+                        const isPast = i < active;
+                        const len = service.title.length;
+                        const cascade =
+                          direction >= 0 ? ci * 0.022 : (len - 1 - ci) * 0.022;
+                        return (
+                          <motion.span
+                            key={ci}
+                            aria-hidden
+                            className="inline-block"
+                            initial={false}
+                            animate={{
+                              rotateX: isActive ? 0 : isPast ? 88 : -88,
+                              y: isActive ? 0 : isPast ? -16 : 16,
+                              opacity: isActive ? 1 : 0.35,
+                              color: isActive ? itemAccent : "var(--color-text-faint)",
+                            }}
+                            transition={{
+                              duration: 0.6,
+                              ease: [0.16, 1, 0.3, 1],
+                              delay: cascade,
+                            }}
+                            style={{ transformOrigin: "50% 50%", whiteSpace: "pre" }}
+                          >
+                            {char}
+                          </motion.span>
+                        );
+                      })}
+                    </span>
                   </div>
                 );
               })}

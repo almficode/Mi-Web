@@ -198,10 +198,15 @@
         "price": "Contact us",
         "description": "For businesses that want automated processes on top of a premium website.",
         "features": [
-          "Custom design",
+          "Exclusive custom design",
+          "Fast, scalable, responsive website",
+          "Technical SEO & Google rankings",
+          "Load speed optimization",
           "Integrated AI chatbot",
           "Custom automations",
-          "Content dashboard",
+          "Conversion-focused copy",
+          "Managed hosting & domain",
+          "Legal, privacy & cookie pages included",
           "30-day support included"
         ],
         "highlighted": true
@@ -211,10 +216,14 @@
         "price": "Contact us",
         "description": "Updates, security and continuous improvements for your existing website.",
         "features": [
-          "Updates & backups",
+          "Regular updates & backups",
           "24/7 monitoring",
-          "Content changes",
-          "Priority support"
+          "Security patches up to date",
+          "Content changes whenever you need",
+          "Ongoing SEO improvements",
+          "Performance reports",
+          "Small new features",
+          "Priority WhatsApp support"
         ]
       }
     ]
