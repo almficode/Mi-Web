@@ -38,9 +38,9 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero dict={dict} locale={locale} />
+      <About dict={dict} />
       <Projects dict={dict} locale={locale} />
       <Services dict={dict} />
-      <About dict={dict} />
       <Metrics dict={dict} />
       <Process dict={dict} />
       <Pricing dict={dict} />

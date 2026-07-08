@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useTransform,
+  type MotionValue,
+} from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RevealText from "./RevealText";
@@ -10,6 +16,75 @@ import RevealOnScroll from "./RevealOnScroll";
 import type { Dictionary } from "@/lib/dictionaries";
 
 gsap.registerPlugin(ScrollTrigger);
+
+/**
+ * One service title on the left column. Each letter rotates continuously as
+ * the shared scroll `progress` (a fractional service index) moves past this
+ * title's index, so you literally watch the cylinder roll while scrolling.
+ */
+function ServiceLetter({
+  char,
+  index,
+  progress,
+  accent,
+}: {
+  char: string;
+  index: number;
+  progress: MotionValue<number>;
+  accent: string;
+}) {
+  // Signed distance from this title to the current scroll position.
+  const rotateX = useTransform(progress, (p) => {
+    const d = Math.max(-1, Math.min(1, p - index));
+    return d * 90; // ahead → folded up, behind → folded down
+  });
+  const y = useTransform(progress, (p) => {
+    const d = Math.max(-1, Math.min(1, p - index));
+    return -d * 16;
+  });
+  const opacity = useTransform(progress, (p) => {
+    const d = Math.min(1, Math.abs(p - index));
+    return 1 - d * 0.7;
+  });
+  const color = useTransform(progress, (p) => {
+    const d = Math.min(1, Math.abs(p - index));
+    return d < 0.5 ? accent : "var(--color-text-faint)";
+  });
+
+  return (
+    <motion.span
+      aria-hidden
+      className="inline-block"
+      style={{ rotateX, y, opacity, color, transformOrigin: "50% 50%", whiteSpace: "pre" }}
+    >
+      {char}
+    </motion.span>
+  );
+}
+
+function ServiceTitle({
+  title,
+  index,
+  progress,
+  accent,
+}: {
+  title: string;
+  index: number;
+  progress: MotionValue<number>;
+  accent: string;
+}) {
+  return (
+    <span
+      className="font-display block text-4xl uppercase leading-none lg:text-[2.75rem]"
+      aria-label={title}
+      style={{ perspective: 700 }}
+    >
+      {title.split("").map((char, ci) => (
+        <ServiceLetter key={ci} char={char} index={index} progress={progress} accent={accent} />
+      ))}
+    </span>
+  );
+}
 
 const serviceImages: Record<string, string> = {
   "desarrollo-web": "/services/desarrollo-web.png",
@@ -23,13 +98,9 @@ export default function Services({ dict }: { dict: Dictionary }) {
   const [active, setActive] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
-  // Scroll direction of the last change (1 = forwards/down, -1 = backwards/up)
-  // so the cylinder roll and the letter cascade follow the direction of travel.
-  const lastActiveRef = useRef(0);
-  const direction = active >= lastActiveRef.current ? 1 : -1;
-  useEffect(() => {
-    lastActiveRef.current = active;
-  }, [active]);
+  // Continuous fractional service index driven by scroll — feeds the fluid
+  // letter roll on the left so the change is visible little by little.
+  const progress = useMotionValue(0);
   const items = dict.services.items;
   const activeService = items[active];
   const accent = active % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-2)";
@@ -55,11 +126,11 @@ export default function Services({ dict }: { dict: Dictionary }) {
         pinSpacing: true,
         scrub: 0.4,
         onUpdate: (self) => {
-          const idx = Math.min(
-            items.length - 1,
-            Math.floor(self.progress * items.length)
-          );
-          setActive(idx);
+          // Continuous position (0 … n-1) for the fluid letter roll…
+          const p = self.progress * (items.length - 1);
+          progress.set(p);
+          // …and the nearest index for the right-hand image/panel swap.
+          setActive(Math.round(p));
         },
       });
 
@@ -101,45 +172,13 @@ export default function Services({ dict }: { dict: Dictionary }) {
                   <div
                     key={service.id}
                     className="border-b border-[var(--color-border)] py-4 first:border-t"
-                    style={{ perspective: 700 }}
                   >
-                    <span
-                      className="font-display block text-4xl uppercase leading-none lg:text-[2.75rem]"
-                      aria-label={service.title}
-                    >
-                      {/* Cylinder roll that follows the scroll direction:
-                          going down, letters roll upwards into place; going up,
-                          they roll back downwards. The cascade also reverses. */}
-                      {service.title.split("").map((char, ci) => {
-                        const isActive = active === i;
-                        const isPast = i < active;
-                        const len = service.title.length;
-                        const cascade =
-                          direction >= 0 ? ci * 0.022 : (len - 1 - ci) * 0.022;
-                        return (
-                          <motion.span
-                            key={ci}
-                            aria-hidden
-                            className="inline-block"
-                            initial={false}
-                            animate={{
-                              rotateX: isActive ? 0 : isPast ? 88 : -88,
-                              y: isActive ? 0 : isPast ? -16 : 16,
-                              opacity: isActive ? 1 : 0.35,
-                              color: isActive ? itemAccent : "var(--color-text-faint)",
-                            }}
-                            transition={{
-                              duration: 0.6,
-                              ease: [0.16, 1, 0.3, 1],
-                              delay: cascade,
-                            }}
-                            style={{ transformOrigin: "50% 50%", whiteSpace: "pre" }}
-                          >
-                            {char}
-                          </motion.span>
-                        );
-                      })}
-                    </span>
+                    <ServiceTitle
+                      title={service.title}
+                      index={i}
+                      progress={progress}
+                      accent={itemAccent}
+                    />
                   </div>
                 );
               })}

@@ -14,6 +14,17 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
+    id: "easy-bike",
+    image: "/projects/easy-bike.png",
+    category: { es: "Alquiler de bicicletas", en: "Bike rental" },
+    name: { es: "Easy Bike", en: "Easy Bike" },
+    description: {
+      es: "Alquiler de bicicletas en Lanzarote, con reserva online y flota destacada.",
+      en: "Bike rental in Lanzarote, with online booking and a featured fleet.",
+    },
+    href: "https://www.easybikelanzarote.com",
+  },
+  {
     id: "enjoy-asian-restaurant",
     image: "/projects/enjoy-asian-restaurant.png",
     category: { es: "Restaurante asiático", en: "Asian restaurant" },
