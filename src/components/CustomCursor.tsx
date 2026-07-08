@@ -50,7 +50,7 @@ export default function CustomCursor() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed left-0 top-0 z-[9999] flex items-center justify-center rounded-full bg-[var(--color-text-strong)] text-[10px] font-semibold uppercase tracking-wide text-white"
+      className="pointer-events-none fixed left-0 top-0 z-[9999] flex items-center justify-center rounded-full bg-[var(--color-text-strong)] px-2 text-center text-[10px] font-semibold uppercase leading-tight tracking-wide text-white"
       animate={{
         width: isHovering ? (label ? 72 : 44) : 14,
         height: isHovering ? (label ? 72 : 44) : 14,

@@ -8,7 +8,6 @@ export const siteConfig = {
     linkedin: "#", // TODO: enlace real de LinkedIn
     x: "#", // TODO: enlace real de X/Twitter
   },
-  calendlyUrl: "https://calendly.com/almficode/consulta", // TODO: enlace real de Calendly
 } as const;
 
 export function whatsappHref(message: string) {

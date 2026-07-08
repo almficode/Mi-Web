@@ -20,7 +20,8 @@
   },
   "floatingBar": {
     "pricing": "Pricing",
-    "bookCall": "Book a call"
+    "bookCall": "Message us",
+    "whatsappMessage": "Hi Almficode, I'd like to book a call / talk about my project."
   },
   "hero": {
     "badge": "Open for new projects",
@@ -37,19 +38,19 @@
     "points": [
       {
         "title": "Web development",
-        "description": "Fast, scalable, tailor-made websites."
+        "description": "We design and build tailor-made, fast, responsive and SEO-optimized websites, crafted to turn visitors into customers."
       },
       {
         "title": "Automation",
-        "description": "We connect your tools to save you hours of work."
+        "description": "We connect your tools and automate repetitive tasks so your business runs on its own and saves you hours every week."
       },
       {
         "title": "Artificial Intelligence",
-        "description": "Chatbots and assistants that engage and convert."
+        "description": "We integrate AI chatbots and assistants that serve your customers, answer questions and capture leads around the clock."
       },
       {
         "title": "Optimization",
-        "description": "Processes and performance polished to the detail."
+        "description": "We fine-tune your site's speed, performance and processes down to the last detail for the best possible experience."
       }
     ]
   },

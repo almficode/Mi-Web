@@ -20,7 +20,8 @@
   },
   "floatingBar": {
     "pricing": "Precios",
-    "bookCall": "Reservar llamada"
+    "bookCall": "Escríbenos",
+    "whatsappMessage": "Hola Almficode, quiero agendar una llamada / consulta sobre mi proyecto."
   },
   "hero": {
     "badge": "Disponibles para nuevos proyectos",
@@ -37,19 +38,19 @@
     "points": [
       {
         "title": "Desarrollo web",
-        "description": "Sitios rápidos, escalables y a medida."
+        "description": "Diseñamos y programamos webs a medida, rápidas, responsive y optimizadas para SEO, pensadas para convertir visitas en clientes."
       },
       {
         "title": "Automatización",
-        "description": "Conectamos herramientas para ahorrarte horas de trabajo."
+        "description": "Conectamos tus herramientas y automatizamos tareas repetitivas para que tu negocio funcione solo y te ahorre horas cada semana."
       },
       {
         "title": "Inteligencia Artificial",
-        "description": "Chatbots y asistentes que atienden y convierten."
+        "description": "Integramos chatbots y asistentes con IA que atienden a tus clientes, resuelven dudas y captan oportunidades las 24 horas."
       },
       {
         "title": "Optimización",
-        "description": "Procesos y rendimiento pulidos al detalle."
+        "description": "Mejoramos la velocidad, el rendimiento y los procesos de tu web hasta el último detalle para ofrecer la mejor experiencia."
       }
     ]
   },
