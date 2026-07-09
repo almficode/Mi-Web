@@ -66,7 +66,7 @@ export default function Header({
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-10">
           <div className="relative z-[60]">
             <Logo locale={locale} variant={onDark ? "light" : "dark"} />
           </div>
@@ -74,17 +74,17 @@ export default function Header({
           <button
             onClick={() => setMenuOpen((v) => !v)}
             data-cursor="link"
-            className="relative z-[60] flex items-center gap-3 rounded-[var(--radius-pill)] border border-[var(--color-border-strong)] bg-white px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-[var(--color-text-strong)]"
+            className="relative z-[60] flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--color-border-strong)] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-strong)] sm:gap-3 sm:px-5 sm:py-2.5 sm:text-sm"
           >
             {menuOpen ? dict.nav.close : dict.nav.menu}
             <span className="flex flex-col gap-[3px]">
               <span
-                className={`block h-[1.6px] w-4 bg-current transition-transform duration-300 ${
+                className={`block h-[1.6px] w-3.5 bg-current transition-transform duration-300 sm:w-4 ${
                   menuOpen ? "translate-y-[4.6px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`block h-[1.6px] w-4 bg-current transition-transform duration-300 ${
+                className={`block h-[1.6px] w-3.5 bg-current transition-transform duration-300 sm:w-4 ${
                   menuOpen ? "-translate-y-[4.6px] -rotate-45" : ""
                 }`}
               />

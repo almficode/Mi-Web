@@ -281,7 +281,7 @@ export default function Services({ dict }: { dict: Dictionary }) {
                 <RevealOnScroll key={service.id} delay={0}>
                   <div className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
                     <span
-                      className="font-display block text-[9vw] uppercase leading-none"
+                      className="font-display block break-words text-[8vw] uppercase leading-[1.05]"
                       style={{ color: mobileAccent }}
                     >
                       {service.title}
