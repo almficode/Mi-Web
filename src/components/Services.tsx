@@ -145,32 +145,33 @@ export default function Services({ dict }: { dict: Dictionary }) {
       ref={sectionRef}
       className="relative border-t border-[var(--color-border)]"
     >
-      <div ref={pinRef} className="flex min-h-screen flex-col justify-center py-20 lg:py-10">
+      <div ref={pinRef} className="flex min-h-screen flex-col justify-center py-8 lg:py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="mb-6 max-w-2xl lg:mb-8">
+          <div className="mb-4 max-w-2xl lg:mb-8">
             <RevealOnScroll>
-              <p className="mb-4 text-xs font-medium uppercase tracking-wide text-[var(--color-accent)]">
+              <p className="mb-2 text-xs font-medium uppercase tracking-wide text-[var(--color-accent)] lg:mb-4">
                 {dict.services.eyebrow}
               </p>
             </RevealOnScroll>
             <RevealText
               as="h2"
-              className="break-words font-display text-[9vw] leading-[1.25] text-[var(--color-text-strong)] sm:text-5xl lg:text-6xl"
+              className="break-words font-display text-[6.5vw] leading-[1.15] text-[var(--color-text-strong)] sm:text-5xl sm:leading-[1.25] lg:text-6xl"
             >
               {dict.services.titleStart}{" "}
               <span className="text-[var(--color-accent)]">{dict.services.titleAccent}</span>
             </RevealText>
           </div>
 
-          {/* Desktop: scroll-driven pinned tabs (no click needed) */}
-          <div className="hidden lg:grid lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-16">
-            <div className="flex flex-col">
+          {/* Scroll-driven pinned tabs — same effect on mobile & desktop */}
+          <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-16">
+            {/* Desktop: full rolling titles list */}
+            <div className="hidden flex-col lg:flex">
               {items.map((service, i) => {
                 const itemAccent = i % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-2)";
                 return (
                   <div
                     key={service.id}
-                    className="border-b border-[var(--color-border)] py-4 first:border-t"
+                    className="border-b border-[var(--color-border)] py-2.5 first:border-t lg:py-4"
                   >
                     <ServiceTitle
                       title={service.title}
@@ -183,7 +184,7 @@ export default function Services({ dict }: { dict: Dictionary }) {
               })}
             </div>
 
-            <div className="relative min-h-[460px] self-start overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)]">
+            <div className="relative min-h-[340px] self-start overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] lg:min-h-[460px]">
               <AnimatePresence initial={false}>
                 <motion.div
                   key={active}
@@ -191,12 +192,19 @@ export default function Services({ dict }: { dict: Dictionary }) {
                   animate={{ y: "0%" }}
                   exit={{ opacity: 0, transition: { duration: 0.1, delay: 0.35 } }}
                   transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute inset-0 bg-[var(--color-surface)] p-6"
+                  className="absolute inset-0 bg-[var(--color-surface)] p-5 sm:p-6"
                 >
-                  <p className="text-lg text-[var(--color-text)] sm:text-xl">
+                  {/* Mobile: the active service title lives inside the panel */}
+                  <span
+                    className="font-display mb-3 block break-words text-[8vw] uppercase leading-[1.05] lg:hidden"
+                    style={{ color: active % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-2)" }}
+                  >
+                    {activeService.title}
+                  </span>
+                  <p className="text-base text-[var(--color-text)] sm:text-lg lg:text-xl">
                     {activeService.description}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-3 flex flex-wrap gap-2 lg:mt-4">
                     {activeService.tags.map((tag) => (
                       <span
                         key={tag}
@@ -207,7 +215,7 @@ export default function Services({ dict }: { dict: Dictionary }) {
                     ))}
                   </div>
 
-                  <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] bg-white">
+                  <div className="relative mt-4 aspect-[16/9] overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] bg-white lg:mt-5 lg:aspect-[4/3]">
                     {activeImage ? (
                       <Image
                         src={activeImage}
@@ -237,7 +245,7 @@ export default function Services({ dict }: { dict: Dictionary }) {
             </div>
           </div>
 
-          <div className="mt-6 hidden items-center justify-center gap-6 lg:flex">
+          <div className="mt-6 flex items-center justify-center gap-4 sm:gap-6">
             <div className="flex items-center gap-2">
               {items.map((service, i) => (
                 <span
@@ -269,48 +277,6 @@ export default function Services({ dict }: { dict: Dictionary }) {
                 <path d="M12 4v16m0 0l-6-6m6 6l6-6" strokeLinecap="round" strokeLinejoin="round" />
               </motion.svg>
             </motion.div>
-          </div>
-
-          {/* Mobile: simple stacked list, each service reveals as you scroll past it */}
-          <div className="flex flex-col gap-6 lg:hidden">
-            {items.map((service, i) => {
-              const mobileAccent = i % 2 === 0 ? "var(--color-accent)" : "var(--color-accent-2)";
-              const mobileImage = serviceImages[service.id];
-              return (
-                <RevealOnScroll key={service.id} delay={0}>
-                  <div className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-                    <span
-                      className="font-display block break-words text-[8vw] uppercase leading-[1.05]"
-                      style={{ color: mobileAccent }}
-                    >
-                      {service.title}
-                    </span>
-                    <p className="mt-4 text-lg text-[var(--color-text)]">{service.description}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {service.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-[var(--radius-pill)] bg-white px-3 py-1.5 text-xs font-medium text-[var(--color-text)] shadow-[var(--shadow-soft)]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    {mobileImage && (
-                      <div className="relative mt-5 aspect-[16/9] overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] bg-white">
-                        <Image
-                          src={mobileImage}
-                          alt={service.title}
-                          fill
-                          sizes="100vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-                  </div>
-                </RevealOnScroll>
-              );
-            })}
           </div>
         </div>
       </div>
