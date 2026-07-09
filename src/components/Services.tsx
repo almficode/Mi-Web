@@ -75,7 +75,7 @@ function ServiceTitle({
 }) {
   return (
     <span
-      className="font-display block text-4xl uppercase leading-none lg:text-[2.75rem]"
+      className="font-display block text-[7vw] uppercase leading-none sm:text-3xl lg:text-[2.75rem]"
       aria-label={title}
       style={{ perspective: 700 }}
     >
@@ -111,11 +111,10 @@ export default function Services({ dict }: { dict: Dictionary }) {
     const pinTarget = pinRef.current;
     if (!section || !pinTarget) return;
 
-    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (!isDesktop || prefersReducedMotion) return;
+    if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
       const trigger = ScrollTrigger.create({

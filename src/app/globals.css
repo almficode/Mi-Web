@@ -81,6 +81,8 @@
 
 html {
   scroll-behavior: auto;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -88,7 +90,9 @@ body {
   color: var(--color-text);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
 }
 
 ::selection {
