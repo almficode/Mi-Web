@@ -32,13 +32,13 @@ export default function Hero({
   const frameRadius = useTransform(scrollYProgress, [0, 1], ["0px", "48px"]);
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.18]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-45%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0.35, 0.6], [1, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0.28, 0.5], [1, 0]);
   const hintOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
-  // Second act: as the headline fades out, the brand wordmark takes
-  // the stage so the video never scrolls "empty".
-  const act2Opacity = useTransform(scrollYProgress, [0.55, 0.78], [0, 1]);
-  const act2Scale = useTransform(scrollYProgress, [0.55, 1], [0.85, 1]);
-  const act2Y = useTransform(scrollYProgress, [0.55, 1], ["10%", "0%"]);
+  // Second act: only after the headline has fully cleared does the brand
+  // wordmark rise into the stage, further down the scroll — no overlap.
+  const act2Opacity = useTransform(scrollYProgress, [0.66, 0.88], [0, 1]);
+  const act2Scale = useTransform(scrollYProgress, [0.66, 1], [0.82, 1]);
+  const act2Y = useTransform(scrollYProgress, [0.66, 1], ["18%", "0%"]);
 
   const meta =
     locale === "es"
